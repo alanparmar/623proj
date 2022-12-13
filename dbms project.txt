@@ -34,9 +34,9 @@ INSERT INTO Depot(dep_id, addr, volume) VALUES
 
 ALTER TABLE Stock ADD CONSTRAINT pk_stock PRIMARY KEY (prod_id, dep_id);
 ALTER TABLE Stock ADD CONSTRAINT fk_stock_prod FOREIGN KEY(prod_id) 
-REFERENCES Product(prod_id);
+REFERENCES Product(prod_id) ON DELETE CASCADE;
 ALTER TABLE Stock ADD CONSTRAINT fk_stock_dep FOREIGN KEY(dep_id) 
-REFERENCES Depot(dep_id);
+REFERENCES Depot(dep_id) ON DELETE CASCADE;
 
 INSERT INTO Stock(prod_id, dep_id, quantity) VALUES
 ('p1', 'd1', 1000),
