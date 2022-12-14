@@ -48,26 +48,4 @@ INSERT INTO Stock(prod_id, dep_id, quantity) VALUES
 ('p2', 'd1', -400),
 ('p2', 'd2', 2000);
 
-In pgAdmin 4, go to the database called dbmsproj: 
-Or
-In SQL Shell (psql):
-Show tables
-\c dbmsproj
-\dt
 
-
-Show all entries in the table: 
-TABLE product;
-TABLE depot;
-TABLE stock;
-
-#2 transaction： The depot d1 is deleted from depot and Stock:
-
-DELETE FROM stock
-WHERE dep_id='d1';
-DELETE FROM depot
-WHERE dep_id='d1';
-
-Show all entries after deleting: 
-TABLE depot;
-TABLE stock
